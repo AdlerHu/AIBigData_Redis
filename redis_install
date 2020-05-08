@@ -1,1 +1,34 @@
+1. Install Python 3
+    a. Install GCC
+        yum -y install gcc
+    
+    b. Install required package
+        yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
+    
+    c. Install python 3
+        wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+        tar -zxvf Python-3.7.0.tgz
+        
+        mkdir /usr/local/python3
+        
+        cd Python-3.7.0
+        ./configure --prefix=/usr/local/python3
+        make && make install
+        
+        ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3
+        ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3
+    
+2. Install Redis
+    wget http://download.redis.io/releases/redis-6.0.1.tar.gz
+    tar xzf redis-6.0.1.tar.gz
+    cd redis-6.0.1
+    make
+    
+3. Start Redis
+    cd ./redis-6.0.1/src
+    redis-server
+    
+    Another bash
+    cd redis-6.0.1/src
+    redis-cli
 
